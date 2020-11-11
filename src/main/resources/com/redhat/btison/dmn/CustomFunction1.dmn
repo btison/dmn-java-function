@@ -2,7 +2,7 @@
 <dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_50029B85-DA2F-4C7A-8B75-184717DC00BF" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_72EA0EFF-6E16-4EC1-8872-367A4FEFAAF9" name="CustomFunction1" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_50029B85-DA2F-4C7A-8B75-184717DC00BF">
   <dmn:extensionElements/>
   <dmn:decision id="_4CEC90F0-6F5A-4DD6-8582-716D2E5F0C15" name="Decision-1">
-    <dmn:variable id="_3FF3F2AE-5DDA-4211-8243-0A72F2A4DAD9" name="Decision-1"/>
+    <dmn:variable id="_3FF3F2AE-5DDA-4211-8243-0A72F2A4DAD9" name="Decision-1" typeRef="boolean"/>
     <dmn:informationRequirement id="_2C90A28E-77B7-42DA-933C-8F2C0CAE03AC">
       <dmn:requiredInput href="#_CF0FFEAA-F3B1-4FD4-B042-6C946275725E"/>
     </dmn:informationRequirement>
@@ -12,15 +12,25 @@
     <dmn:knowledgeRequirement id="_C8B872D8-C4FB-47EE-9C87-678A2B975B0F">
       <dmn:requiredKnowledge href="#_67B4CA0F-6C9C-4BE0-BE7F-A0DC1942085E"/>
     </dmn:knowledgeRequirement>
-    <dmn:invocation id="_568F8B26-BE64-4AC7-BCAF-5ADA7B52215E">
-      <dmn:literalExpression id="_EC864A92-209A-458D-9CC9-69515FCB5061">
-        <dmn:text></dmn:text>
-      </dmn:literalExpression>
-      <dmn:binding>
-        <dmn:parameter id="_CEE2FAC8-3990-4EE9-88CE-BC539F8230F5" name="p-1"/>
-        <dmn:literalExpression/>
-      </dmn:binding>
-    </dmn:invocation>
+    <dmn:context id="_51518455-2997-411E-976E-1809401B1989">
+      <dmn:contextEntry>
+        <dmn:variable id="_A322322E-F61F-4C0D-B61D-35F17C8AD355" name="input number" typeRef="number"/>
+        <dmn:literalExpression id="_2ADA4C47-7E4A-488E-9016-2112A5965925">
+          <dmn:text>input</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:variable id="_6CCD5E08-9C30-4186-B5C0-1D1EDC966A23" name="input divisor" typeRef="number"/>
+        <dmn:literalExpression id="_68F514D2-060D-4C51-AE5D-7E444C051959">
+          <dmn:text>divisor</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:literalExpression id="_2FFE5483-06DC-41B8-951E-0442CD015970">
+          <dmn:text>isDivisibleBy(input number, input divisor)</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+    </dmn:context>
   </dmn:decision>
   <dmn:businessKnowledgeModel id="_67B4CA0F-6C9C-4BE0-BE7F-A0DC1942085E" name="isDivisibleBy">
     <dmn:variable id="_EDC2FBAF-C339-4683-AFED-2E7E49DEF41B" name="isDivisibleBy" typeRef="boolean"/>
@@ -53,12 +63,20 @@
     <dmndi:DMNDiagram>
       <di:extension>
         <kie:ComponentsWidthsExtension>
-          <kie:ComponentWidths dmnElementRef="_568F8B26-BE64-4AC7-BCAF-5ADA7B52215E">
+          <kie:ComponentWidths dmnElementRef="_51518455-2997-411E-976E-1809401B1989">
             <kie:width>50.0</kie:width>
             <kie:width>100.0</kie:width>
             <kie:width>150.0</kie:width>
           </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_EC864A92-209A-458D-9CC9-69515FCB5061"/>
+          <kie:ComponentWidths dmnElementRef="_2ADA4C47-7E4A-488E-9016-2112A5965925">
+            <kie:width>150.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_68F514D2-060D-4C51-AE5D-7E444C051959">
+            <kie:width>150.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_2FFE5483-06DC-41B8-951E-0442CD015970">
+            <kie:width>150.0</kie:width>
+          </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_0A2393A8-A46D-4B74-925A-7BD53E5F1F05">
             <kie:width>50.0</kie:width>
             <kie:width>130.0</kie:width>
