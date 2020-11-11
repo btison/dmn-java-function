@@ -47,7 +47,7 @@
         <dmn:contextEntry>
           <dmn:variable id="_7F66F0F2-AA52-48E0-BE43-0365547E8C1E" name="method signature" typeRef="string"/>
           <dmn:literalExpression id="_33AD807A-E544-4B8E-B995-C07B2A57ECD3">
-            <dmn:text>isDivisibleBy(n, i)</dmn:text>
+            <dmn:text>isDivisibleBy(java.lang.Integer, java.lang.Integer)</dmn:text>
           </dmn:literalExpression>
         </dmn:contextEntry>
       </dmn:context>
